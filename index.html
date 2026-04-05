@@ -3,20 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Showcase — Landing Page Portfolio</title>
+  <title>niocreations — Landing Page Portfolio</title>
   <meta name="description" content="Hand-crafted landing pages. Clean code, modern design, real results.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <span class="preloader-logo">niocreations<span class="logo-dot">.</span></span>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Noise overlay -->
+  <div class="noise-overlay"></div>
+
   <!-- Hero -->
   <section class="hero" id="hero">
-    <header class="header">
-      <span class="logo">showcase<span class="logo-dot">.</span></span>
-      <nav class="nav">
+    <!-- Floating orbs -->
+    <div class="hero-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-grid-bg"></div>
+
+    <header class="header" id="header">
+      <span class="logo">niocreations<span class="logo-dot">.</span></span>
+      <nav class="nav" id="nav">
+        <a href="#work" data-i18n="nav.work" data-magnetic>Work</a>
+        <a href="#about" data-i18n="nav.about" data-magnetic>About</a>
+        <a href="#contact" data-i18n="nav.contact" data-magnetic>Contact</a>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <span class="lang-sep">/</span>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-menu-nav">
         <a href="#work" data-i18n="nav.work">Work</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -26,23 +69,60 @@
           <button class="lang-btn" data-lang="ru">RU</button>
         </div>
       </nav>
-    </header>
+    </div>
 
     <div class="hero-body">
       <div class="hero-label" data-animate data-i18n="hero.label">Web Development &amp; Design</div>
-      <h1 class="hero-title" data-animate data-delay="80">
+      <h1 class="hero-title" data-animate data-delay="80" data-split>
         I build web projects<br>
         that <span class="gradient-text">actually work</span>
       </h1>
       <p class="hero-desc" data-animate data-delay="160" data-i18n="hero.desc">Landing pages, web apps, interactive tools. No templates, no page builders — just hand-crafted code from scratch.</p>
       <div class="hero-actions" data-animate data-delay="240">
-        <a href="#work" class="btn btn-primary" data-i18n="hero.cta1">See my work</a>
-        <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Get in touch</a>
+        <a href="#work" class="btn btn-primary" data-magnetic data-i18n="hero.cta1">
+          <span>See my work</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost" data-magnetic data-i18n="hero.cta2">Get in touch</a>
+      </div>
+      <div class="hero-scroll-hint" data-animate data-delay="500">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll</span>
       </div>
     </div>
-
-    <div class="hero-grid-bg"></div>
   </section>
+
+  <!-- Marquee -->
+  <div class="marquee" data-animate>
+    <div class="marquee-inner">
+      <div class="marquee-track">
+        <span>HTML5</span><span class="marquee-dot">&bull;</span>
+        <span>CSS3</span><span class="marquee-dot">&bull;</span>
+        <span>JavaScript</span><span class="marquee-dot">&bull;</span>
+        <span>React</span><span class="marquee-dot">&bull;</span>
+        <span>Web Apps</span><span class="marquee-dot">&bull;</span>
+        <span>Landing Pages</span><span class="marquee-dot">&bull;</span>
+        <span>Responsive</span><span class="marquee-dot">&bull;</span>
+        <span>Performance</span><span class="marquee-dot">&bull;</span>
+        <span>Animation</span><span class="marquee-dot">&bull;</span>
+        <span>Clean Code</span><span class="marquee-dot">&bull;</span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span>HTML5</span><span class="marquee-dot">&bull;</span>
+        <span>CSS3</span><span class="marquee-dot">&bull;</span>
+        <span>JavaScript</span><span class="marquee-dot">&bull;</span>
+        <span>React</span><span class="marquee-dot">&bull;</span>
+        <span>Web Apps</span><span class="marquee-dot">&bull;</span>
+        <span>Landing Pages</span><span class="marquee-dot">&bull;</span>
+        <span>Responsive</span><span class="marquee-dot">&bull;</span>
+        <span>Performance</span><span class="marquee-dot">&bull;</span>
+        <span>Animation</span><span class="marquee-dot">&bull;</span>
+        <span>Clean Code</span><span class="marquee-dot">&bull;</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Work -->
   <section class="work" id="work">
@@ -50,12 +130,14 @@
       <div class="section-head" data-animate>
         <span class="label" data-i18n="work.label">Projects</span>
         <h2 data-i18n="work.title">Selected work</h2>
+        <p class="section-sub" data-i18n="work.sub">Each project built from scratch with attention to every pixel</p>
       </div>
 
       <div class="work-list">
-        <a href="projects/triloka/" class="work-card" data-animate>
+        <a href="projects/triloka/" class="work-card" data-animate data-tilt>
+          <div class="work-card-glow"></div>
           <div class="work-card-visual">
-            <img src="img/triloka.jpg" alt="TRILOKA">
+            <img src="img/triloka.jpg" alt="TRILOKA" loading="lazy">
             <div class="work-card-badge">Live</div>
           </div>
           <div class="work-card-body">
@@ -77,9 +159,10 @@
           </div>
         </a>
 
-        <a href="projects/poker-timer/" class="work-card" data-animate data-delay="80">
+        <a href="projects/poker-timer/" class="work-card" data-animate data-delay="80" data-tilt>
+          <div class="work-card-glow"></div>
           <div class="work-card-visual">
-            <img src="img/poker-timer.jpg" alt="Poker Timer">
+            <img src="img/poker-timer.jpg" alt="Poker Timer" loading="lazy">
             <div class="work-card-badge badge-interactive">Interactive</div>
           </div>
           <div class="work-card-body">
@@ -101,9 +184,10 @@
           </div>
         </a>
 
-        <a href="https://psihologiya-na-salfetke.ru/" target="_blank" rel="noopener" class="work-card" data-animate data-delay="160">
+        <a href="https://psihologiya-na-salfetke.ru/" target="_blank" rel="noopener" class="work-card" data-animate data-delay="160" data-tilt>
+          <div class="work-card-glow"></div>
           <div class="work-card-visual">
-            <img src="img/psihologiya.jpg" alt="Psihologiya na Salfetke">
+            <img src="img/psihologiya.jpg" alt="Psihologiya na Salfetke" loading="lazy">
             <div class="work-card-badge badge-external">External</div>
           </div>
           <div class="work-card-body">
@@ -136,21 +220,29 @@
         <div class="about-left" data-animate>
           <span class="label" data-i18n="about.label">About</span>
           <h2 data-i18n-html="about.title">Every detail<br>is <span class="gradient-text">intentional</span></h2>
+          <p class="about-philosophy" data-i18n="about.desc">From premium landing pages to interactive web apps — each project is built from scratch with performance, usability, and attention to detail. No bloat, no shortcuts.</p>
         </div>
         <div class="about-right" data-animate data-delay="100">
-          <p data-i18n="about.desc">From premium landing pages to interactive web apps — each project is built from scratch with performance, usability, and attention to detail. No bloat, no shortcuts.</p>
           <div class="about-metrics">
-            <div class="metric">
-              <span class="metric-val">100%</span>
+            <div class="metric" data-animate data-delay="150">
+              <span class="metric-val" data-count="100" data-suffix="%">0%</span>
               <span class="metric-label" data-i18n="m.handcoded">Hand-coded</span>
+              <div class="metric-bar"><div class="metric-bar-fill" data-width="100"></div></div>
             </div>
-            <div class="metric">
+            <div class="metric" data-animate data-delay="200">
               <span class="metric-val">&lt;1s</span>
               <span class="metric-label" data-i18n="m.loadtime">Load time</span>
+              <div class="metric-bar"><div class="metric-bar-fill" data-width="95"></div></div>
             </div>
-            <div class="metric">
-              <span class="metric-val">0</span>
+            <div class="metric" data-animate data-delay="250">
+              <span class="metric-val" data-count="0">0</span>
               <span class="metric-label" data-i18n="m.deps">Dependencies</span>
+              <div class="metric-bar"><div class="metric-bar-fill" data-width="100"></div></div>
+            </div>
+            <div class="metric" data-animate data-delay="300">
+              <span class="metric-val" data-count="3" data-suffix="+">0+</span>
+              <span class="metric-label" data-i18n="m.projects">Projects shipped</span>
+              <div class="metric-bar"><div class="metric-bar-fill" data-width="60"></div></div>
             </div>
           </div>
         </div>
@@ -163,16 +255,28 @@
     <div class="container">
       <div class="contact-inner" data-animate>
         <span class="label" data-i18n="contact.label">Contact</span>
-        <h2 data-i18n="contact.title">Have a project in mind?</h2>
+        <h2 class="contact-title" data-i18n="contact.title">Have a project in mind?</h2>
         <p data-i18n="contact.desc">Let's talk about your next web project.</p>
         <div class="contact-links">
-          <a href="mailto:niotid1987@gmail.com" class="contact-link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-            niotid1987@gmail.com
+          <a href="mailto:niotid1987@gmail.com" class="contact-link" data-magnetic>
+            <div class="contact-link-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            </div>
+            <div class="contact-link-body">
+              <span class="contact-link-label">Email</span>
+              <span class="contact-link-value">niotid1987@gmail.com</span>
+            </div>
+            <svg class="contact-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="https://t.me/niotid" target="_blank" rel="noopener" class="contact-link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-            @niotid
+          <a href="https://t.me/niotid" target="_blank" rel="noopener" class="contact-link" data-magnetic>
+            <div class="contact-link-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </div>
+            <div class="contact-link-body">
+              <span class="contact-link-label">Telegram</span>
+              <span class="contact-link-value">@niotid</span>
+            </div>
+            <svg class="contact-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
@@ -183,7 +287,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-row">
-        <span class="logo">showcase<span class="logo-dot">.</span></span>
+        <span class="logo">niocreations<span class="logo-dot">.</span></span>
         <span class="footer-copy">&copy; 2025</span>
       </div>
     </div>
