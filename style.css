@@ -98,12 +98,16 @@ button { cursor: none; }
   letter-spacing: -0.03em;
   display: block;
   margin-bottom: 24px;
-  animation: preloaderPulse 1.2s ease-in-out infinite;
+  cursor: default;
 }
 
-@keyframes preloaderPulse {
-  0%, 100% { opacity: 0.4; transform: scale(0.97); }
-  50% { opacity: 1; transform: scale(1); }
+.preloader-logo.click {
+  animation: preloaderClick 0.25s ease-in forwards;
+}
+
+@keyframes preloaderClick {
+  0%   { color: var(--text); transform: scale(1); }
+  100% { color: var(--text-subtle); transform: scale(0.95); }
 }
 
 .preloader-bar {
@@ -120,7 +124,7 @@ button { cursor: none; }
   width: 0%;
   background: linear-gradient(90deg, var(--accent), var(--accent2));
   border-radius: 2px;
-  animation: preloaderFill 1.5s var(--ease) forwards;
+  animation: preloaderFill 0.7s var(--ease) forwards;
 }
 
 @keyframes preloaderFill {

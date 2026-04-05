@@ -91,15 +91,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Preloader ──
   const preloader = document.getElementById('preloader');
+  const preloaderLogo = preloader.querySelector('.preloader-logo');
+
+  // Bar fills in 1.5s, then logo "clicks" down, then dismiss
   setTimeout(() => {
-    preloader.classList.add('done');
+    preloaderLogo.classList.add('click');
+  }, 700);
+
+  setTimeout(() => {
+    preloader.style.opacity = '0';
+    preloader.style.visibility = 'hidden';
+    preloader.style.pointerEvents = 'none';
     document.body.style.overflow = '';
-    // Trigger hero animations after preloader
     document.querySelectorAll('.hero [data-animate]').forEach(el => {
       const d = el.dataset.delay || 0;
       setTimeout(() => el.classList.add('visible'), 200 + parseInt(d));
     });
-  }, 1800);
+  }, 1000);
 
   // Block scroll during preloader
   document.body.style.overflow = 'hidden';
