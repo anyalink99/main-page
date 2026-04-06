@@ -1,4 +1,4 @@
-// NIOCREATIONS — Portfolio v2.0
+// NIOCREATIONS — Portfolio v3.0
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -9,58 +9,80 @@ document.addEventListener('DOMContentLoaded', () => {
       'nav.about': 'About',
       'nav.contact': 'Contact',
       'hero.label': 'Web Development & Design',
-      'hero.title': 'I build web projects<br>that <span class="gradient-text">actually work</span>',
-      'hero.desc': 'Landing pages, web apps, interactive tools. No templates, no page builders — just hand-crafted code from scratch.',
+      'hero.title': 'I make websites<br>and <span class="accent-text">web apps</span>',
+      'hero.desc': 'Clean code, thoughtful design, fast loading. HTML, CSS, JavaScript, React — from landing pages to interactive tools.',
       'hero.cta1': 'See my work',
       'hero.cta2': 'Get in touch',
       'work.label': 'Projects',
-      'work.title': 'Selected work',
-      'work.sub': 'Each project built from scratch with attention to every pixel',
+      'work.title': 'Recent work',
+      'work.sub': 'A few projects I\'ve built recently',
       'about.label': 'About',
-      'about.title': 'Every detail<br>is <span class="gradient-text">intentional</span>',
-      'about.desc': 'From premium landing pages to interactive web apps — each project is built from scratch with performance, usability, and attention to detail. No bloat, no shortcuts.',
-      'm.handcoded': 'Hand-coded',
-      'm.loadtime': 'Load time',
-      'm.deps': 'Dependencies',
-      'm.projects': 'Projects shipped',
+      'about.title': 'How I <span class="accent-text">work</span>',
+      'about.desc': 'I write code from scratch — no page builders, no WordPress themes. Each project gets its own structure, designed around what it actually needs.',
+      'ap1.t': 'Code from scratch',
+      'ap1.d': 'No templates or frameworks where they\'re not needed. Just HTML, CSS and JS, written for the specific project.',
+      'ap2.t': 'Fast by default',
+      'ap2.d': 'Lightweight pages that load quickly. No heavy libraries, no unnecessary dependencies.',
+      'ap3.t': 'Works on any device',
+      'ap3.d': 'Responsive from the start. Tested on phones, tablets and desktops.',
       'contact.label': 'Contact',
       'contact.title': 'Have a project in mind?',
-      'contact.desc': 'Let\'s talk about your next web project.',
+      'contact.desc': 'Write me — I\'ll reply within a day.',
       'c1.t': 'TRILOKA',
-      'c1.d': 'Architecture & interior design studio. Premium landing with door-reveal preloader, RU/EN localization, scroll animations, and responsive design.',
+      'c1.d': 'Landing page for an architecture and interior design studio in Dubai. Door-reveal preloader, RU/EN switch, scroll animations.',
       'c2.t': 'Poker Timer',
-      'c2.d': 'Tournament blind timer with 48-tick progress bar, level navigation, auto-advance, and break management. Interactive demo of the full desktop app.',
-      'c3.t': 'Psihologiya na Salfetke',
-      'c3.d': 'Psychology blog with card-based article grid, warm design, and 7 thematic categories. Practical self-help content in a clean, readable format.',
+      'c2.d': 'Blind timer for poker tournaments. 48-tick progress bar, level navigation, auto-advance, break management.',
+      'c3.t': 'And more',
+      'c3.d': 'Other projects — web apps, tools, websites',
+      'modal.title': 'Other projects',
+      'mp1.t': 'Rock Climbing Calendar',
+      'mp1.d': 'Competition calendar for climbers. Schedule, filters, event details.',
+      'mp2.t': 'Psihologiya na Salfetke',
+      'mp2.d': 'Psychology blog with card-based article grid and 7 categories.',
+      'mp3.t': 'Mafia Host App',
+      'mp3.d': 'App for mafia game hosts. Role assignment, timers, game log.',
+      'mp4.t': 'Set Trainer',
+      'mp4.d': 'Card game trainer. Pattern recognition practice with timed rounds.',
     },
     ru: {
       'nav.work': 'Работы',
       'nav.about': 'Обо мне',
       'nav.contact': 'Контакты',
       'hero.label': 'Веб-разработка и дизайн',
-      'hero.title': 'Я делаю веб-проекты,<br>которые <span class="gradient-text">реально работают</span>',
-      'hero.desc': 'Лендинги, веб-приложения, интерактивные инструменты. Без шаблонов, без конструкторов — только код с нуля.',
+      'hero.title': 'Делаю сайты<br>и <span class="accent-text">веб-приложения</span>',
+      'hero.desc': 'Чистый код, продуманный дизайн, быстрая загрузка. HTML, CSS, JavaScript, React — от лендингов до интерактивных инструментов.',
       'hero.cta1': 'Смотреть работы',
-      'hero.cta2': 'Связаться',
+      'hero.cta2': 'Написать мне',
       'work.label': 'Проекты',
-      'work.title': 'Избранные работы',
-      'work.sub': 'Каждый проект создан с нуля с вниманием к каждому пикселю',
+      'work.title': 'Последние работы',
+      'work.sub': 'Несколько недавних проектов',
       'about.label': 'Обо мне',
-      'about.title': 'Каждая деталь<br><span class="gradient-text">продумана</span>',
-      'about.desc': 'От премиальных лендингов до интерактивных веб-приложений — каждый проект создаётся с нуля с вниманием к производительности, удобству и деталям.',
-      'm.handcoded': 'Код вручную',
-      'm.loadtime': 'Загрузка',
-      'm.deps': 'Зависимости',
-      'm.projects': 'Проектов',
+      'about.title': 'Как я <span class="accent-text">работаю</span>',
+      'about.desc': 'Пишу код с нуля — без конструкторов и шаблонов WordPress. Каждый проект получает свою структуру, под свои задачи.',
+      'ap1.t': 'Код с нуля',
+      'ap1.d': 'Без шаблонов и фреймворков там, где они не нужны. Только HTML, CSS и JS, написанные под конкретный проект.',
+      'ap2.t': 'Быстрая загрузка',
+      'ap2.d': 'Лёгкие страницы, которые грузятся быстро. Без тяжёлых библиотек и лишних зависимостей.',
+      'ap3.t': 'Работает на любом устройстве',
+      'ap3.d': 'Адаптивная вёрстка с самого начала. Проверено на телефонах, планшетах и десктопах.',
       'contact.label': 'Контакты',
       'contact.title': 'Есть проект?',
-      'contact.desc': 'Давайте обсудим ваш следующий веб-проект.',
+      'contact.desc': 'Напишите — отвечу в течение дня.',
       'c1.t': 'TRILOKA',
-      'c1.d': 'Архитектурно-дизайнерская студия. Премиальный лендинг с прелоадером-дверями, локализацией RU/EN, анимациями прокрутки и адаптивным дизайном.',
+      'c1.d': 'Лендинг для архитектурно-дизайнерской студии в Дубае. Прелоадер-двери, переключатель RU/EN, анимации при скролле.',
       'c2.t': 'Покер Таймер',
-      'c2.d': 'Таймер блайндов для покерных турниров с прогресс-баром из 48 тиков, навигацией по уровням, автопереходом и управлением перерывами.',
-      'c3.t': 'Психология на салфетке',
-      'c3.d': 'Блог по психологии с карточной сеткой статей, тёплым дизайном и 7 тематическими категориями. Практичный контент для саморазвития.',
+      'c2.d': 'Таймер блайндов для покерных турниров. Прогресс-бар из 48 тиков, навигация по уровням, автопереход, перерывы.',
+      'c3.t': 'И другие',
+      'c3.d': 'Другие проекты — веб-приложения, инструменты, сайты',
+      'modal.title': 'Другие проекты',
+      'mp1.t': 'Календарь скалолазания',
+      'mp1.d': 'Календарь соревнований для скалолазов. Расписание, фильтры, детали событий.',
+      'mp2.t': 'Психология на салфетке',
+      'mp2.d': 'Блог по психологии с карточной сеткой статей и 7 категориями.',
+      'mp3.t': 'Mafia Host App',
+      'mp3.d': 'Приложение для ведущего мафии. Раздача ролей, таймеры, журнал игры.',
+      'mp4.t': 'Set Trainer',
+      'mp4.d': 'Тренажёр карточной игры. Тренировка распознавания паттернов на время.',
     }
   };
 
@@ -93,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloader = document.getElementById('preloader');
   const preloaderLogo = preloader.querySelector('.preloader-logo');
 
-  // Bar fills in 1.5s, then logo "clicks" down, then dismiss
   setTimeout(() => {
     preloaderLogo.classList.add('click');
   }, 700);
@@ -112,56 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Block scroll during preloader
   document.body.style.overflow = 'hidden';
 
-  // ── Custom Cursor ──
-  const cursor = document.getElementById('cursor');
-  const follower = document.getElementById('cursorFollower');
-  let mx = 0, my = 0, fx = 0, fy = 0;
-
-  // Only on non-touch devices
-  const isTouch = matchMedia('(hover: none)').matches;
-
-  if (!isTouch) {
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX;
-      my = e.clientY;
-      cursor.style.left = mx + 'px';
-      cursor.style.top = my + 'px';
-    });
-
-    // Smooth follower
-    function animateFollower() {
-      fx += (mx - fx) * 0.12;
-      fy += (my - fy) * 0.12;
-      follower.style.left = fx + 'px';
-      follower.style.top = fy + 'px';
-      requestAnimationFrame(animateFollower);
-    }
-    animateFollower();
-
-    // Hover state for interactive elements
-    const interactives = 'a, button, .btn, .work-card, .contact-link, .lang-btn, [data-magnetic]';
-    document.addEventListener('mouseover', e => {
-      if (e.target.closest(interactives)) {
-        cursor.classList.add('hovering');
-        follower.classList.add('hovering');
-      }
-    });
-    document.addEventListener('mouseout', e => {
-      if (e.target.closest(interactives)) {
-        cursor.classList.remove('hovering');
-        follower.classList.remove('hovering');
-      }
-    });
-  }
-
   // ── Header scroll ──
   const header = document.getElementById('header');
-  let lastScroll = 0;
 
   function onScroll() {
     const st = window.scrollY;
     header.classList.toggle('scrolled', st > 60);
-    lastScroll = st;
 
     // Scroll progress
     const h = document.documentElement.scrollHeight - window.innerHeight;
@@ -206,16 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const d = entry.target.dataset.delay || 0;
         setTimeout(() => {
           entry.target.classList.add('visible');
-          // Animate metric bars
-          const bar = entry.target.querySelector('.metric-bar-fill');
-          if (bar) {
-            bar.style.width = bar.dataset.width + '%';
-          }
-          // Animate counters
-          const counter = entry.target.querySelector('[data-count]');
-          if (counter) {
-            animateCounter(counter);
-          }
         }, parseInt(d));
         obs.unobserve(entry.target);
       }
@@ -229,81 +196,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ── Counter animation ──
-  function animateCounter(el) {
-    const target = parseInt(el.dataset.count);
-    const suffix = el.dataset.suffix || '';
-    const duration = 1500;
-    const start = performance.now();
+  // ── More Projects Modal ──
+  const modal = document.getElementById('moreProjectsModal');
+  const moreBtn = document.getElementById('moreProjectsBtn');
+  const closeBtn = document.getElementById('modalClose');
 
-    function tick(now) {
-      const t = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
-      const val = Math.round(eased * target);
-      el.textContent = val + suffix;
-      if (t < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
+  function openModal() {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
 
-  // ── 3D Tilt on project cards ──
-  if (!isTouch) {
-    document.querySelectorAll('[data-tilt]').forEach(card => {
-      const glow = card.querySelector('.work-card-glow');
-
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const cx = rect.width / 2;
-        const cy = rect.height / 2;
-        const rotateX = ((y - cy) / cy) * -4;
-        const rotateY = ((x - cx) / cx) * 4;
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-
-        if (glow) {
-          glow.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(129,140,248,0.1), transparent 40%)`;
-        }
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-        if (glow) glow.style.background = '';
-      });
-    });
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
   }
 
-  // ── Magnetic hover on buttons ──
-  if (!isTouch) {
-    document.querySelectorAll('[data-magnetic]').forEach(el => {
-      el.addEventListener('mousemove', e => {
-        const rect = el.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-      });
+  moreBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
 
-      el.addEventListener('mouseleave', () => {
-        el.style.transform = '';
-        el.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
-        setTimeout(() => el.style.transition = '', 500);
-      });
-    });
-  }
-
-  // ── Parallax orbs on mouse move ──
-  if (!isTouch) {
-    const orbs = document.querySelectorAll('.orb');
-    document.addEventListener('mousemove', e => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 2;
-      const y = (e.clientY / window.innerHeight - 0.5) * 2;
-      orbs.forEach((orb, i) => {
-        const speed = (i + 1) * 12;
-        orb.style.transform += ''; // force update
-        orb.style.marginLeft = x * speed + 'px';
-        orb.style.marginTop = y * speed + 'px';
-      });
-    });
-  }
 });

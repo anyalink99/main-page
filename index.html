@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>niocreations — Landing Page Portfolio</title>
-  <meta name="description" content="Hand-crafted landing pages. Clean code, modern design, real results.">
+  <title>niocreations — Web Development</title>
+  <meta name="description" content="Websites and web apps. Clean code, thoughtful design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,32 +20,17 @@
     </div>
   </div>
 
-  <!-- Custom cursor -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
-
   <!-- Scroll progress -->
   <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- Noise overlay -->
-  <div class="noise-overlay"></div>
-
   <!-- Hero -->
   <section class="hero" id="hero">
-    <!-- Floating orbs -->
-    <div class="hero-orbs">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-    </div>
-    <div class="hero-grid-bg"></div>
-
     <header class="header" id="header">
       <span class="logo">niocreations<span class="logo-dot">.</span></span>
       <nav class="nav" id="nav">
-        <a href="#work" data-i18n="nav.work" data-magnetic>Work</a>
-        <a href="#about" data-i18n="nav.about" data-magnetic>About</a>
-        <a href="#contact" data-i18n="nav.contact" data-magnetic>Contact</a>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
         <div class="lang-switch">
           <button class="lang-btn active" data-lang="en">EN</button>
           <span class="lang-sep">/</span>
@@ -72,94 +57,33 @@
     </div>
 
     <div class="hero-body">
-      <div class="hero-label" data-animate data-i18n="hero.label">Web Development &amp; Design</div>
-      <h1 class="hero-title" data-animate data-delay="80" data-split>
-        I build web projects<br>
-        that <span class="gradient-text">actually work</span>
+      <div class="hero-label" data-animate data-i18n="hero.label">Web Development & Design</div>
+      <h1 class="hero-title" data-animate data-delay="80">
+        I make websites<br>
+        and <span class="accent-text">web apps</span>
       </h1>
-      <p class="hero-desc" data-animate data-delay="160" data-i18n="hero.desc">Landing pages, web apps, interactive tools. No templates, no page builders — just hand-crafted code from scratch.</p>
+      <p class="hero-desc" data-animate data-delay="160" data-i18n="hero.desc">Clean code, thoughtful design, fast loading. HTML, CSS, JavaScript, React — from landing pages to interactive tools.</p>
       <div class="hero-actions" data-animate data-delay="240">
-        <a href="#work" class="btn btn-primary" data-magnetic data-i18n="hero.cta1">
+        <a href="#work" class="btn btn-primary" data-i18n="hero.cta1">
           <span>See my work</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>
-        <a href="#contact" class="btn btn-ghost" data-magnetic data-i18n="hero.cta2">Get in touch</a>
-      </div>
-      <div class="hero-scroll-hint" data-animate data-delay="500">
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
-        </div>
-        <span>Scroll</span>
+        <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Get in touch</a>
       </div>
     </div>
   </section>
-
-  <!-- Marquee -->
-  <div class="marquee" data-animate>
-    <div class="marquee-inner">
-      <div class="marquee-track">
-        <span>HTML5</span><span class="marquee-dot">&bull;</span>
-        <span>CSS3</span><span class="marquee-dot">&bull;</span>
-        <span>JavaScript</span><span class="marquee-dot">&bull;</span>
-        <span>React</span><span class="marquee-dot">&bull;</span>
-        <span>Web Apps</span><span class="marquee-dot">&bull;</span>
-        <span>Landing Pages</span><span class="marquee-dot">&bull;</span>
-        <span>Responsive</span><span class="marquee-dot">&bull;</span>
-        <span>Performance</span><span class="marquee-dot">&bull;</span>
-        <span>Animation</span><span class="marquee-dot">&bull;</span>
-        <span>Clean Code</span><span class="marquee-dot">&bull;</span>
-      </div>
-      <div class="marquee-track" aria-hidden="true">
-        <span>HTML5</span><span class="marquee-dot">&bull;</span>
-        <span>CSS3</span><span class="marquee-dot">&bull;</span>
-        <span>JavaScript</span><span class="marquee-dot">&bull;</span>
-        <span>React</span><span class="marquee-dot">&bull;</span>
-        <span>Web Apps</span><span class="marquee-dot">&bull;</span>
-        <span>Landing Pages</span><span class="marquee-dot">&bull;</span>
-        <span>Responsive</span><span class="marquee-dot">&bull;</span>
-        <span>Performance</span><span class="marquee-dot">&bull;</span>
-        <span>Animation</span><span class="marquee-dot">&bull;</span>
-        <span>Clean Code</span><span class="marquee-dot">&bull;</span>
-      </div>
-      <div class="marquee-track" aria-hidden="true">
-        <span>HTML5</span><span class="marquee-dot">&bull;</span>
-        <span>CSS3</span><span class="marquee-dot">&bull;</span>
-        <span>JavaScript</span><span class="marquee-dot">&bull;</span>
-        <span>React</span><span class="marquee-dot">&bull;</span>
-        <span>Web Apps</span><span class="marquee-dot">&bull;</span>
-        <span>Landing Pages</span><span class="marquee-dot">&bull;</span>
-        <span>Responsive</span><span class="marquee-dot">&bull;</span>
-        <span>Performance</span><span class="marquee-dot">&bull;</span>
-        <span>Animation</span><span class="marquee-dot">&bull;</span>
-        <span>Clean Code</span><span class="marquee-dot">&bull;</span>
-      </div>
-      <div class="marquee-track" aria-hidden="true">
-        <span>HTML5</span><span class="marquee-dot">&bull;</span>
-        <span>CSS3</span><span class="marquee-dot">&bull;</span>
-        <span>JavaScript</span><span class="marquee-dot">&bull;</span>
-        <span>React</span><span class="marquee-dot">&bull;</span>
-        <span>Web Apps</span><span class="marquee-dot">&bull;</span>
-        <span>Landing Pages</span><span class="marquee-dot">&bull;</span>
-        <span>Responsive</span><span class="marquee-dot">&bull;</span>
-        <span>Performance</span><span class="marquee-dot">&bull;</span>
-        <span>Animation</span><span class="marquee-dot">&bull;</span>
-        <span>Clean Code</span><span class="marquee-dot">&bull;</span>
-      </div>
-    </div>
-  </div>
 
   <!-- Work -->
   <section class="work" id="work">
     <div class="container">
       <div class="section-head" data-animate>
         <span class="label" data-i18n="work.label">Projects</span>
-        <h2 data-i18n="work.title">Selected work</h2>
-        <p class="section-sub" data-i18n="work.sub">Each project built from scratch with attention to every pixel</p>
+        <h2 data-i18n="work.title">Recent work</h2>
+        <p class="section-sub" data-i18n="work.sub">A few projects I've built recently</p>
       </div>
 
       <div class="work-list">
-        <a href="projects/triloka/" class="work-card" data-animate data-tilt>
-          <div class="work-card-glow"></div>
+        <a href="projects/triloka/" class="work-card" data-animate>
           <div class="work-card-visual">
             <img src="img/triloka.jpg" alt="TRILOKA" loading="lazy">
             <div class="work-card-badge">Live</div>
@@ -171,7 +95,7 @@
               <span>Dubai</span>
             </div>
             <h3 data-i18n="c1.t">TRILOKA</h3>
-            <p data-i18n="c1.d">Architecture & interior design studio. Premium landing with door-reveal preloader, RU/EN localization, scroll animations, and responsive design.</p>
+            <p data-i18n="c1.d">Landing page for an architecture and interior design studio in Dubai. Door-reveal preloader, RU/EN switch, scroll animations.</p>
             <div class="work-card-footer">
               <div class="work-card-tech">
                 <span>HTML</span><span>CSS</span><span>JS</span>
@@ -183,8 +107,7 @@
           </div>
         </a>
 
-        <a href="projects/poker-timer/" class="work-card" data-animate data-delay="80" data-tilt>
-          <div class="work-card-glow"></div>
+        <a href="projects/poker-timer/" class="work-card" data-animate data-delay="80">
           <div class="work-card-visual">
             <img src="img/poker-timer.jpg" alt="Poker Timer" loading="lazy">
             <div class="work-card-badge badge-interactive">Interactive</div>
@@ -196,7 +119,7 @@
               <span>Poker</span>
             </div>
             <h3 data-i18n="c2.t">Poker Timer</h3>
-            <p data-i18n="c2.d">Tournament blind timer with 48-tick progress bar, level navigation, auto-advance, and break management. Interactive demo of the full desktop app.</p>
+            <p data-i18n="c2.d">Blind timer for poker tournaments. 48-tick progress bar, level navigation, auto-advance, break management.</p>
             <div class="work-card-footer">
               <div class="work-card-tech">
                 <span>HTML</span><span>CSS</span><span>JS</span><span>Vite</span>
@@ -208,30 +131,16 @@
           </div>
         </a>
 
-        <a href="https://psihologiya-na-salfetke.ru/" target="_blank" rel="noopener" class="work-card" data-animate data-delay="160" data-tilt>
-          <div class="work-card-glow"></div>
-          <div class="work-card-visual">
-            <img src="img/psihologiya.jpg" alt="Psihologiya na Salfetke" loading="lazy">
-            <div class="work-card-badge badge-external">External</div>
+        <button class="work-card work-card--more" data-animate data-delay="160" id="moreProjectsBtn">
+          <div class="work-card-more-inner">
+            <span class="work-card-more-count">+4</span>
+            <h3 data-i18n="c3.t">And more</h3>
+            <p data-i18n="c3.d">Other projects — web apps, tools, websites</p>
+            <span class="work-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </span>
           </div>
-          <div class="work-card-body">
-            <div class="work-card-meta">
-              <span>Website</span>
-              <span>Psychology</span>
-              <span>Blog</span>
-            </div>
-            <h3 data-i18n="c3.t">Psihologiya na Salfetke</h3>
-            <p data-i18n="c3.d">Psychology blog with card-based article grid, warm design, and 7 thematic categories. Practical self-help content in a clean, readable format.</p>
-            <div class="work-card-footer">
-              <div class="work-card-tech">
-                <span>HTML</span><span>CSS</span><span>CMS</span>
-              </div>
-              <span class="work-card-arrow">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
+        </button>
 
       </div>
     </div>
@@ -243,30 +152,22 @@
       <div class="about-content">
         <div class="about-left" data-animate>
           <span class="label" data-i18n="about.label">About</span>
-          <h2 data-i18n-html="about.title">Every detail<br>is <span class="gradient-text">intentional</span></h2>
-          <p class="about-philosophy" data-i18n="about.desc">From premium landing pages to interactive web apps — each project is built from scratch with performance, usability, and attention to detail. No bloat, no shortcuts.</p>
+          <h2 data-i18n-html="about.title">How I <span class="accent-text">work</span></h2>
+          <p class="about-philosophy" data-i18n="about.desc">I write code from scratch — no page builders, no WordPress themes. Each project gets its own structure, designed around what it actually needs.</p>
         </div>
         <div class="about-right" data-animate data-delay="100">
-          <div class="about-metrics">
-            <div class="metric" data-animate data-delay="150">
-              <span class="metric-val" data-count="100" data-suffix="%">0%</span>
-              <span class="metric-label" data-i18n="m.handcoded">Hand-coded</span>
-              <div class="metric-bar"><div class="metric-bar-fill" data-width="100"></div></div>
+          <div class="about-points">
+            <div class="about-point" data-animate data-delay="150">
+              <div class="about-point-title" data-i18n="ap1.t">Code from scratch</div>
+              <div class="about-point-desc" data-i18n="ap1.d">No templates or frameworks where they're not needed. Just HTML, CSS and JS, written for the specific project.</div>
             </div>
-            <div class="metric" data-animate data-delay="200">
-              <span class="metric-val">&lt;1s</span>
-              <span class="metric-label" data-i18n="m.loadtime">Load time</span>
-              <div class="metric-bar"><div class="metric-bar-fill" data-width="95"></div></div>
+            <div class="about-point" data-animate data-delay="200">
+              <div class="about-point-title" data-i18n="ap2.t">Fast by default</div>
+              <div class="about-point-desc" data-i18n="ap2.d">Lightweight pages that load quickly. No heavy libraries, no unnecessary dependencies.</div>
             </div>
-            <div class="metric" data-animate data-delay="250">
-              <span class="metric-val" data-count="0">0</span>
-              <span class="metric-label" data-i18n="m.deps">Dependencies</span>
-              <div class="metric-bar"><div class="metric-bar-fill" data-width="100"></div></div>
-            </div>
-            <div class="metric" data-animate data-delay="300">
-              <span class="metric-val" data-count="3" data-suffix="+">0+</span>
-              <span class="metric-label" data-i18n="m.projects">Projects shipped</span>
-              <div class="metric-bar"><div class="metric-bar-fill" data-width="60"></div></div>
+            <div class="about-point" data-animate data-delay="250">
+              <div class="about-point-title" data-i18n="ap3.t">Works on any device</div>
+              <div class="about-point-desc" data-i18n="ap3.d">Responsive from the start. Tested on phones, tablets and desktops.</div>
             </div>
           </div>
         </div>
@@ -280,9 +181,9 @@
       <div class="contact-inner" data-animate>
         <span class="label" data-i18n="contact.label">Contact</span>
         <h2 class="contact-title" data-i18n="contact.title">Have a project in mind?</h2>
-        <p data-i18n="contact.desc">Let's talk about your next web project.</p>
+        <p data-i18n="contact.desc">Write me — I'll reply within a day.</p>
         <div class="contact-links">
-          <a href="mailto:niotid1987@gmail.com" class="contact-link" data-magnetic>
+          <a href="mailto:niotid1987@gmail.com" class="contact-link">
             <div class="contact-link-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
             </div>
@@ -292,7 +193,7 @@
             </div>
             <svg class="contact-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="https://t.me/niotid" target="_blank" rel="noopener" class="contact-link" data-magnetic>
+          <a href="https://t.me/niotid" target="_blank" rel="noopener" class="contact-link">
             <div class="contact-link-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
             </div>
@@ -316,6 +217,60 @@
       </div>
     </div>
   </footer>
+
+  <!-- More Projects Modal -->
+  <div class="modal-overlay" id="moreProjectsModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 data-i18n="modal.title">Other projects</h3>
+        <button class="modal-close" id="modalClose" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-list">
+        <a href="https://niocreations.ru/rockclimbingcalendar/" target="_blank" rel="noopener" class="modal-item">
+          <div class="modal-item-info">
+            <span class="modal-item-name" data-i18n="mp1.t">Rock Climbing Calendar</span>
+            <span class="modal-item-desc" data-i18n="mp1.d">Competition calendar for climbers. Schedule, filters, event details.</span>
+          </div>
+          <div class="modal-item-tech">
+            <span>HTML</span><span>CSS</span><span>JS</span>
+          </div>
+          <svg class="modal-item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <a href="https://psihologiya-na-salfetke.ru/" target="_blank" rel="noopener" class="modal-item">
+          <div class="modal-item-info">
+            <span class="modal-item-name" data-i18n="mp2.t">Psihologiya na Salfetke</span>
+            <span class="modal-item-desc" data-i18n="mp2.d">Psychology blog with card-based article grid and 7 categories.</span>
+          </div>
+          <div class="modal-item-tech">
+            <span>HTML</span><span>CSS</span><span>CMS</span>
+          </div>
+          <svg class="modal-item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <a href="https://niocreations.ru/mafiahostapp/" target="_blank" rel="noopener" class="modal-item">
+          <div class="modal-item-info">
+            <span class="modal-item-name" data-i18n="mp3.t">Mafia Host App</span>
+            <span class="modal-item-desc" data-i18n="mp3.d">App for mafia game hosts. Role assignment, timers, game log.</span>
+          </div>
+          <div class="modal-item-tech">
+            <span>HTML</span><span>CSS</span><span>JS</span>
+          </div>
+          <svg class="modal-item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <a href="https://niocreations.ru/settrainer/" target="_blank" rel="noopener" class="modal-item">
+          <div class="modal-item-info">
+            <span class="modal-item-name" data-i18n="mp4.t">Set Trainer</span>
+            <span class="modal-item-desc" data-i18n="mp4.d">Card game trainer. Pattern recognition practice with timed rounds.</span>
+          </div>
+          <div class="modal-item-tech">
+            <span>HTML</span><span>CSS</span><span>JS</span>
+          </div>
+          <svg class="modal-item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
