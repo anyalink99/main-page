@@ -1,7 +1,6 @@
 // Poker Timer — Simplified Interactive Demo
 
 (function() {
-  // Structure: 9 levels + 2 breaks (like the original default first half)
   const structure = [
     { type:'level', sb:100, bb:100, dur:1200 },
     { type:'level', sb:100, bb:200, dur:1200 },
@@ -17,16 +16,22 @@
   ];
 
   const TICKS = 48;
+  const COLOR_TEXT = '#f0f0f0';
+  const COLOR_MUTED = '#666';
+  const COLOR_GREEN = '#22c55e';
+  const ANIM_DUR = 380;
+  const ANIM_EASE = 'cubic-bezier(0.4, 0, 0.2, 1)';
+
   let segIndex = 0;
-  let remaining = structure[0].dur; // seconds left
+  let remaining = structure[0].dur;
   let running = false;
   let intervalId = null;
+  let isAnimating = false;
 
   // DOM refs
   const clockEl = document.getElementById('clock');
   const currentBlindsEl = document.getElementById('currentBlinds');
   const nextBlindsEl = document.getElementById('nextBlinds');
-  const levelLabelEl = document.getElementById('levelLabel');
   const progressBarEl = document.getElementById('progressBar');
   const playBtn = document.getElementById('playBtn');
   const prevBtn = document.getElementById('prevBtn');
@@ -36,6 +41,7 @@
   const nextBreakEl = document.getElementById('nextBreak');
   const iconPlay = playBtn.querySelector('.icon-play');
   const iconPause = playBtn.querySelector('.icon-pause');
+  const blindsRow = document.querySelector('.blinds-row');
 
   function fmt(n) { return String(n).padStart(2, '0'); }
 
@@ -78,6 +84,31 @@
     return null;
   }
 
+  // --- Centralized display state computation ---
+  function captureDisplayState(idx) {
+    const seg = structure[idx];
+    const isBreak = seg.type === 'break';
+
+    let currentText, currentColor;
+    if (isBreak) {
+      currentText = 'BREAK';
+      currentColor = COLOR_GREEN;
+    } else {
+      currentText = formatBlinds(seg.sb, seg.bb);
+      currentColor = COLOR_TEXT;
+    }
+
+    let nextText;
+    const nextLvl = findNextLevel(idx);
+    if (nextLvl !== null) {
+      nextText = formatBlinds(structure[nextLvl].sb, structure[nextLvl].bb);
+    } else {
+      nextText = '\u2014';
+    }
+
+    return { currentText, currentColor, nextText, isBreak };
+  }
+
   // Build progress ticks
   function buildTicks() {
     progressBarEl.innerHTML = '';
@@ -96,6 +127,157 @@
     render();
   }
 
+  // --- Apply display state to real DOM (no animation) ---
+  function applyBlindsState(state) {
+    currentBlindsEl.textContent = state.currentText;
+    nextBlindsEl.textContent = state.nextText;
+    currentBlindsEl.parentElement.classList.toggle('is-break', state.isBreak);
+  }
+
+  // --- Create an overlay panel (absolutely positioned span) ---
+  // Inserted inside .blind-group (position:relative) so it shares the exact
+  // centering context as the real .blind-value. Uses the same CSS class for
+  // identical font rendering. translateX is used to move between groups.
+  function createPanel(text, color, refEl, targetGroup) {
+    const group = targetGroup || refEl.closest('.blind-group');
+    const panel = document.createElement('span');
+    panel.className = 'blind-value';
+    panel.textContent = text;
+    panel.style.position = 'absolute';
+    panel.style.left = '0';
+    panel.style.right = '0';
+    panel.style.bottom = '0';
+    panel.style.color = color;
+    panel.style.pointerEvents = 'none';
+    panel.style.whiteSpace = 'nowrap';
+    group.appendChild(panel);
+    return panel;
+  }
+
+  // --- Blinds animation ---
+  function animateBlinds(oldIdx, newIdx, direction) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const oldState = captureDisplayState(oldIdx);
+    const newState = captureDisplayState(newIdx);
+
+    // Decide mode: conveyor or crossfade
+    let useConveyor;
+    if (direction === 'forward') {
+      useConveyor = (oldState.nextText === newState.currentText);
+    } else {
+      useConveyor = (oldState.currentText === newState.nextText);
+    }
+
+    // Measure positions using group rects (fixed width, no content-dependent shift)
+    const currentGroupRect = currentBlindsEl.closest('.blind-group').getBoundingClientRect();
+    const nextGroupRect = nextBlindsEl.closest('.blind-group').getBoundingClientRect();
+    const shift = nextGroupRect.left - currentGroupRect.left;
+
+    // Hide real values and create panels at OLD positions
+    currentBlindsEl.style.visibility = 'hidden';
+    nextBlindsEl.style.visibility = 'hidden';
+
+    const panels = [];
+
+    if (useConveyor && direction === 'forward') {
+      const panelA = createPanel(oldState.currentText, oldState.currentColor, currentBlindsEl);
+      const panelB = createPanel(oldState.nextText, COLOR_MUTED, nextBlindsEl);
+      const panelC = createPanel(newState.nextText, COLOR_MUTED, nextBlindsEl);
+      panels.push(panelA, panelB, panelC);
+
+      // Apply new state NOW (hidden) so layout settles immediately
+      applyBlindsState(newState);
+
+      panelA.animate([
+        { transform: 'translateX(0)', opacity: 1 },
+        { transform: 'translateX(' + (-shift) + 'px)', opacity: 0 }
+      ], { duration: ANIM_DUR, easing: ANIM_EASE, fill: 'forwards' });
+
+      panelB.animate([
+        { transform: 'translateX(0)', color: COLOR_MUTED },
+        { transform: 'translateX(' + (-shift) + 'px)', color: newState.currentColor }
+      ], { duration: ANIM_DUR, easing: ANIM_EASE, fill: 'forwards' });
+
+      panelC.animate([
+        { transform: 'translateX(' + shift + 'px)', opacity: 0 },
+        { transform: 'translateX(0)', opacity: 1 }
+      ], { duration: ANIM_DUR, easing: ANIM_EASE, fill: 'forwards' });
+
+    } else if (useConveyor && direction === 'backward') {
+      const panelA = createPanel(oldState.currentText, oldState.currentColor, currentBlindsEl);
+      const panelB = createPanel(oldState.nextText, COLOR_MUTED, nextBlindsEl);
+      const panelC = createPanel(newState.currentText, newState.currentColor, currentBlindsEl);
+      panels.push(panelA, panelB, panelC);
+
+      applyBlindsState(newState);
+
+      panelA.animate([
+        { transform: 'translateX(0)', color: oldState.currentColor },
+        { transform: 'translateX(' + shift + 'px)', color: COLOR_MUTED }
+      ], { duration: ANIM_DUR, easing: ANIM_EASE, fill: 'forwards' });
+
+      panelB.animate([
+        { transform: 'translateX(0)', opacity: 1 },
+        { transform: 'translateX(' + shift + 'px)', opacity: 0 }
+      ], { duration: ANIM_DUR, easing: ANIM_EASE, fill: 'forwards' });
+
+      panelC.animate([
+        { transform: 'translateX(' + (-shift) + 'px)', opacity: 0 },
+        { transform: 'translateX(0)', opacity: 1 }
+      ], { duration: ANIM_DUR, easing: ANIM_EASE, fill: 'forwards' });
+
+    } else {
+      // Crossfade: only current slot changes, next stays
+      const dir = direction === 'forward' ? -1 : 1;
+      const outPanel = createPanel(oldState.currentText, oldState.currentColor, currentBlindsEl);
+      const inPanel = createPanel(newState.currentText, newState.currentColor, currentBlindsEl);
+      panels.push(outPanel, inPanel);
+
+      // Also handle next if it changed
+      if (oldState.nextText !== newState.nextText) {
+        const outNext = createPanel(oldState.nextText, COLOR_MUTED, nextBlindsEl);
+        const inNext = createPanel(newState.nextText, COLOR_MUTED, nextBlindsEl);
+        panels.push(outNext, inNext);
+
+        // Apply new state now
+        applyBlindsState(newState);
+
+        outNext.animate([
+          { transform: 'translateX(0)', opacity: 1 },
+          { transform: 'translateX(' + (dir * 40) + 'px)', opacity: 0 }
+        ], { duration: ANIM_DUR, easing: ANIM_EASE, fill: 'forwards' });
+
+        inNext.animate([
+          { transform: 'translateX(' + (-dir * 40) + 'px)', opacity: 0 },
+          { transform: 'translateX(0)', opacity: 1 }
+        ], { duration: ANIM_DUR, easing: ANIM_EASE, fill: 'forwards' });
+      } else {
+        applyBlindsState(newState);
+        nextBlindsEl.style.visibility = 'visible';
+      }
+
+      outPanel.animate([
+        { transform: 'translateX(0)', opacity: 1 },
+        { transform: 'translateX(' + (dir * 40) + 'px)', opacity: 0 }
+      ], { duration: ANIM_DUR, easing: ANIM_EASE, fill: 'forwards' });
+
+      inPanel.animate([
+        { transform: 'translateX(' + (-dir * 40) + 'px)', opacity: 0 },
+        { transform: 'translateX(0)', opacity: 1 }
+      ], { duration: ANIM_DUR, easing: ANIM_EASE, fill: 'forwards' });
+    }
+
+    // Cleanup: just remove panels and reveal real elements (already updated)
+    setTimeout(() => {
+      panels.forEach(p => p.remove());
+      currentBlindsEl.style.visibility = 'visible';
+      nextBlindsEl.style.visibility = 'visible';
+      isAnimating = false;
+    }, ANIM_DUR + 20);
+  }
+
   function render() {
     const seg = structure[segIndex];
     const isBreak = seg.type === 'break';
@@ -107,31 +289,9 @@
     clockEl.classList.toggle('danger', !isBreak && remaining <= 10);
     clockEl.classList.toggle('is-break', isBreak);
 
-    // Blinds
-    if (isBreak) {
-      levelLabelEl.textContent = 'Break';
-      levelLabelEl.style.color = '#22c55e';
-      currentBlindsEl.textContent = 'BREAK';
-      currentBlindsEl.parentElement.classList.add('is-break');
-
-      const nextLvl = findNextLevel(segIndex);
-      if (nextLvl !== null) {
-        nextBlindsEl.textContent = formatBlinds(structure[nextLvl].sb, structure[nextLvl].bb);
-      }
-    } else {
-      const lvlNum = getLevelNumber(segIndex);
-      levelLabelEl.textContent = 'Level ' + lvlNum;
-      levelLabelEl.style.color = '';
-      currentBlindsEl.textContent = formatBlinds(seg.sb, seg.bb);
-      currentBlindsEl.parentElement.classList.remove('is-break');
-
-      const nextLvl = findNextLevel(segIndex);
-      if (nextLvl !== null) {
-        const ns = structure[nextLvl];
-        nextBlindsEl.textContent = ns.type === 'break' ? 'BREAK' : formatBlinds(ns.sb, ns.bb);
-      } else {
-        nextBlindsEl.textContent = '—';
-      }
+    // Blinds (skip if mid-animation — panels are handling display)
+    if (!isAnimating) {
+      applyBlindsState(captureDisplayState(segIndex));
     }
 
     // Progress
@@ -162,10 +322,11 @@
     if (!running) return;
     remaining--;
     if (remaining <= 0) {
-      // Auto-advance to next segment
       if (segIndex < structure.length - 1) {
+        const oldIdx = segIndex;
         segIndex++;
         remaining = structure[segIndex].dur;
+        animateBlinds(oldIdx, segIndex, 'forward');
       } else {
         running = false;
       }
@@ -186,17 +347,23 @@
   }
 
   function goNext() {
+    if (isAnimating) return;
     if (segIndex < structure.length - 1) {
+      const oldIdx = segIndex;
       segIndex++;
       remaining = structure[segIndex].dur;
+      animateBlinds(oldIdx, segIndex, 'forward');
       render();
     }
   }
 
   function goPrev() {
+    if (isAnimating) return;
     if (segIndex > 0) {
+      const oldIdx = segIndex;
       segIndex--;
       remaining = structure[segIndex].dur;
+      animateBlinds(oldIdx, segIndex, 'backward');
       render();
     }
   }
@@ -214,5 +381,19 @@
     if (e.code === 'Space') { e.preventDefault(); togglePlay(); }
     if (e.code === 'ArrowRight') goNext();
     if (e.code === 'ArrowLeft') goPrev();
+  });
+
+  // Pro modal
+  const proModal = document.getElementById('proModal');
+  const proBadge = document.getElementById('proBadge');
+  const proClose = document.getElementById('proModalClose');
+
+  proBadge.addEventListener('click', () => proModal.classList.add('open'));
+  proClose.addEventListener('click', () => proModal.classList.remove('open'));
+  proModal.addEventListener('click', e => {
+    if (e.target === proModal) proModal.classList.remove('open');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.code === 'Escape') proModal.classList.remove('open');
   });
 })();

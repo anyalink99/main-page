@@ -33,8 +33,11 @@
 
 html {
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) transparent;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -400,7 +403,7 @@ button { cursor: none; }
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 200;
   transition: background 0.4s, backdrop-filter 0.4s, padding 0.4s;
 }
 
@@ -721,7 +724,7 @@ button { cursor: none; }
 
 @keyframes marqueeScroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-25%); }
 }
 
 /* ========================================
