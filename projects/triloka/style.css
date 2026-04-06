@@ -192,8 +192,7 @@ a {
     border-color: var(--color-accent-light);
   }
 
-  body { cursor: none; }
-  a, button, input, select, textarea { cursor: none; }
+  * { cursor: none !important; }
 }
 
 /* ========================================

@@ -73,6 +73,36 @@ document.addEventListener('DOMContentLoaded', () => {
       'footer.services': 'Services',
       'footer.company': 'Company',
       'footer.about': 'About Us',
+      'footer.copy': '&copy; 2025 TRILOKA. All rights reserved.',
+      'hero.t1': 'Crafting',
+      'hero.t2': '<em>Extraordinary</em>',
+      'hero.t3': 'Spaces',
+      'about.exp': 'Years of<br>Excellence',
+      'm.arch': 'Architecture',
+      'm.int': 'Interior Design',
+      'm.join': 'Joinery',
+      'm.turn': 'Turnkey Construction',
+      'm.villa': 'Villa Residences',
+      'm.comm': 'Commercial Fit-out',
+      'p1.tag': 'Residential',
+      'p1.title': 'Luxury Villa Interior',
+      'p1.loc': 'Palm Jumeirah, Dubai',
+      'p2.tag': 'Architecture',
+      'p2.title': 'Modern Residence',
+      'p2.loc': 'Emirates Hills',
+      'p3.tag': 'Interior',
+      'p3.title': 'Penthouse Design',
+      'p3.loc': 'Downtown Dubai',
+      'p4.tag': 'Commercial',
+      'p4.title': 'Executive Office',
+      'p4.loc': 'Business Bay',
+      'p5.tag': 'Architecture',
+      'p5.title': 'Contemporary Villa',
+      'p5.loc': 'Jumeirah Islands',
+      'p6.tag': 'Joinery',
+      'p6.title': 'Bespoke Kitchen',
+      'p6.loc': 'Jumeirah Golf Estates',
+      'footer.svc4': 'Commercial Fit-out',
     },
     ru: {
       'nav.home': 'Главная',
@@ -141,6 +171,36 @@ document.addEventListener('DOMContentLoaded', () => {
       'footer.services': 'Услуги',
       'footer.company': 'Компания',
       'footer.about': 'О нас',
+      'footer.copy': '&copy; 2025 TRILOKA. Все права защищены.',
+      'hero.t1': 'Создаём',
+      'hero.t2': '<em>исключительные</em>',
+      'hero.t3': 'пространства',
+      'about.exp': 'Лет<br>мастерства',
+      'm.arch': 'Архитектура',
+      'm.int': 'Дизайн интерьера',
+      'm.join': 'Столярные работы',
+      'm.turn': 'Строительство под ключ',
+      'm.villa': 'Виллы и резиденции',
+      'm.comm': 'Коммерческая отделка',
+      'p1.tag': 'Жилой',
+      'p1.title': 'Интерьер люкс-виллы',
+      'p1.loc': 'Палм Джумейра, Дубай',
+      'p2.tag': 'Архитектура',
+      'p2.title': 'Современная резиденция',
+      'p2.loc': 'Эмирейтс Хиллз',
+      'p3.tag': 'Интерьер',
+      'p3.title': 'Дизайн пентхауса',
+      'p3.loc': 'Даунтаун Дубай',
+      'p4.tag': 'Коммерческий',
+      'p4.title': 'Офис руководителя',
+      'p4.loc': 'Бизнес Бэй',
+      'p5.tag': 'Архитектура',
+      'p5.title': 'Современная вилла',
+      'p5.loc': 'Джумейра Айлендс',
+      'p6.tag': 'Столярные работы',
+      'p6.title': 'Кухня на заказ',
+      'p6.loc': 'Джумейра Голф Эстейтс',
+      'footer.svc4': 'Коммерческая отделка',
     }
   };
 
@@ -152,12 +212,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.dataset.i18n;
       if (dict[key] !== undefined) {
-        // For inputs/textareas, update placeholder; for labels, update text
-        if (el.tagName === 'LABEL') {
-          el.textContent = dict[key];
-        } else {
-          el.textContent = dict[key];
-        }
+        el.textContent = dict[key];
+      }
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18nHtml;
+      if (dict[key] !== undefined) {
+        el.innerHTML = dict[key];
       }
     });
     // Update placeholder attributes on form inputs
