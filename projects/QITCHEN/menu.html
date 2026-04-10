@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu — Qitchen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://framerusercontent.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Preload all menu thumbnails -->
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/fhMMbGkmrMBjUIswKIN5x3w.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/9kkGOeR8XfJ0bkSq5vagmboso.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/obPljpm9PHIdcU8RiJB5Q4qcTBo.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/quqbVpcYdgH65rZqF71BSohYQ.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/05utisiCSaVR87iUNMsXid3Jgs.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/Ed2EhaCAbs1wRkDTc5vxXiOczE4.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/dewXkdK3qGBrcu5aDMswBstC4c.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/IioQcyucvy3RI3a1KSX7R95jxO4.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/KrDf3YKIs1qO70tsAQ00Ws.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/cOFzDBu3VcpPMyZrfpoqGTFdA4.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/27vE5qIMgg0IarFBK9fDPTLr9ZA.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/bCZ9FLkc5BuH3LlY2ajVeE5Cb4o.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/obWS2NDDG7Rnd4D7xOGDyh4FCA.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/rUY8V3p7qMU6d0ymkSDqZWbG4.webp">
+    <link rel="preload" as="image" href="https://framerusercontent.com/images/zoCG6siF05pS2bpapbv0gEtdPqE.webp">
+</head>
+<body>
+    <div class="page-transition" id="pageTransition"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-menu-link page-link">Home</a>
+        <a href="menu.html" class="mobile-menu-link page-link">Menu</a>
+        <a href="about.html" class="mobile-menu-link page-link">About</a>
+        <a href="reservation.html" class="mobile-menu-link page-link">Reservation</a>
+    </div>
+
+    <div class="subpage-layout">
+        <div class="sub-left">
+            <div class="sub-left-img">
+                <img src="https://framerusercontent.com/images/10I4GJR5nYsUsYnoOPIDjoapkA.webp" alt="Sushi bowl">
+            </div>
+            <nav class="nav">
+                <button class="nav-burger" id="navBurger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+                <a href="index.html" class="nav-logo page-link">QITCHEN</a>
+                <div class="nav-links">
+                    <a href="menu.html" class="nav-link page-link">MENU</a>
+                    <a href="about.html" class="nav-link page-link">ABOUT</a>
+                </div>
+                <a href="reservation.html" class="nav-btn page-link">BOOK A TABLE</a>
+            </nav>
+            <h1 class="sub-left-title reveal-text"><span>MENU</span></h1>
+        </div>
+
+        <div class="sub-right">
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-target="maki">MAKI</button>
+                <button class="menu-tab" data-target="uramaki">URAMAKI</button>
+                <button class="menu-tab" data-target="special">SPECIAL ROLLS</button>
+            </div>
+
+            <!-- Maki -->
+            <div class="menu-category" id="maki">
+                <h2 class="menu-category-title">MAKI</h2>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/fhMMbGkmrMBjUIswKIN5x3w.webp" alt="Spicy Tuna Maki"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Spicy Tuna Maki</span><span class="menu-item-dots"></span><span class="menu-item-price">$5</span></div>
+                        <p class="menu-item-desc">A tantalizing blend of spicy tuna, cucumber, and avocado, harmoniously rolled in nori and seasoned rice.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/9kkGOeR8XfJ0bkSq5vagmboso.webp" alt="Mango Maki"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Mango Maki</span><span class="menu-item-dots"></span><span class="menu-item-price">$5</span></div>
+                        <p class="menu-item-desc">Tempura-fried shrimp, cucumber, and cream cheese embrace a center of fresh avocado, delivering a satisfying contrast of textures.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/obPljpm9PHIdcU8RiJB5Q4qcTBo.webp" alt="Salmon Maki"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Salmon Maki</span><span class="menu-item-dots"></span><span class="menu-item-price">$5</span></div>
+                        <p class="menu-item-desc">Shiitake mushrooms, avocado, and pickled daikon radish nestle within a roll of seasoned rice, coated with nutty sesame seeds.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/quqbVpcYdgH65rZqF71BSohYQ.webp" alt="Tuna Maki"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Tuna Maki</span><span class="menu-item-dots"></span><span class="menu-item-price">$5</span></div>
+                        <p class="menu-item-desc">A vibrant assortment of julienned carrots, bell peppers, and cucumber, tightly enclosed in a nori-wrapped rice roll.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Uramaki -->
+            <div class="menu-category" id="uramaki">
+                <h2 class="menu-category-title">URAMAKI</h2>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/05utisiCSaVR87iUNMsXid3Jgs.webp" alt="Volcano Delight"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Volcano Delight</span><span class="menu-item-dots"></span><span class="menu-item-price">$12</span></div>
+                        <p class="menu-item-desc">Creamy crab salad, avocado, and cucumber rolled inside, topped with spicy tuna and drizzled with fiery sriracha sauce.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/Ed2EhaCAbs1wRkDTc5vxXiOczE4.webp" alt="Rainbow Fusion"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Rainbow Fusion</span><span class="menu-item-dots"></span><span class="menu-item-price">$12</span></div>
+                        <p class="menu-item-desc">A colorful blend of fresh tuna, salmon, yellowtail, and avocado, enveloping a core of cucumber and crab stick.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/dewXkdK3qGBrcu5aDMswBstC4c.webp" alt="Dragon Elegance"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Dragon Elegance</span><span class="menu-item-dots"></span><span class="menu-item-price">$12</span></div>
+                        <p class="menu-item-desc">Grilled eel and avocado nestled within the roll, draped with slices of ripe avocado resembling dragon scales.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/IioQcyucvy3RI3a1KSX7R95jxO4.webp" alt="Sunset Serenity"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Sunset Serenity</span><span class="menu-item-dots"></span><span class="menu-item-price">$12</span></div>
+                        <p class="menu-item-desc">Tempura shrimp, cucumber, spicy mayo on soy paper with mango slices for a tropical finish.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/KrDf3YKIs1qO70tsAQ00Ws.webp" alt="Mystic Garden"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Mystic Garden</span><span class="menu-item-dots"></span><span class="menu-item-price">$12</span></div>
+                        <p class="menu-item-desc">Shiitake mushrooms, asparagus, cucumber with tempura bits and sesame for an earthy delight.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/cOFzDBu3VcpPMyZrfpoqGTFdA4.webp" alt="Ocean Breeze"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Ocean Breeze</span><span class="menu-item-dots"></span><span class="menu-item-price">$12</span></div>
+                        <p class="menu-item-desc">Shrimp, crab stick, avocado with yuzu-infused tobiko for a burst of citrus flavor.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/27vE5qIMgg0IarFBK9fDPTLr9ZA.webp" alt="Tokyo Blossom"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Tokyo Blossom</span><span class="menu-item-dots"></span><span class="menu-item-price">$12</span></div>
+                        <p class="menu-item-desc">Tuna, crab stick, cucumber with edible flower petals for a beautiful presentation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Rolls -->
+            <div class="menu-category" id="special">
+                <h2 class="menu-category-title">SPECIAL ROLLS</h2>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/bCZ9FLkc5BuH3LlY2ajVeE5Cb4o.webp" alt="Sunrise Bliss"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Sunrise Bliss</span><span class="menu-item-dots"></span><span class="menu-item-price">$16</span></div>
+                        <p class="menu-item-desc">Salmon, cream cheese, asparagus rolled in orange tobiko for a radiant presentation.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/obWS2NDDG7Rnd4D7xOGDyh4FCA.webp" alt="Mango Tango"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Mango Tango</span><span class="menu-item-dots"></span><span class="menu-item-price">$16</span></div>
+                        <p class="menu-item-desc">Tempura shrimp, cucumber, avocado crowned with mango and drizzled in mango sauce.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/rUY8V3p7qMU6d0ymkSDqZWbG4.webp" alt="Truffle Indulgence"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Truffle Indulgence</span><span class="menu-item-dots"></span><span class="menu-item-price">$16</span></div>
+                        <p class="menu-item-desc">Black truffle, wagyu beef, cucumber, microgreens — the pinnacle of luxury sushi.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/zoCG6siF05pS2bpapbv0gEtdPqE.webp" alt="Pacific Firecracker"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Pacific Firecracker</span><span class="menu-item-dots"></span><span class="menu-item-price">$16</span></div>
+                        <p class="menu-item-desc">Spicy crab salad, tempura shrimp, jalape&ntilde;o with chili aioli for a fiery kick.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-thumb"><img src="https://framerusercontent.com/images/obPljpm9PHIdcU8RiJB5Q4qcTBo.webp" alt="Eternal Eel"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top"><span class="menu-item-name">Eternal Eel</span><span class="menu-item-dots"></span><span class="menu-item-price">$16</span></div>
+                        <p class="menu-item-desc">Eel tempura, foie gras, cucumber with truffle oil and gold leaf for the ultimate indulgence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.menu-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const target = document.getElementById(tab.dataset.target);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        const rp = document.querySelector('.sub-right');
+        if (rp) {
+            const cats = document.querySelectorAll('.menu-category');
+            rp.addEventListener('scroll', () => {
+                let cur = '';
+                cats.forEach(c => { if (c.getBoundingClientRect().top < window.innerHeight / 2) cur = c.id; });
+                if (cur) document.querySelectorAll('.menu-tab').forEach(t => t.classList.toggle('active', t.dataset.target === cur));
+            });
+        }
+    </script>
+</body>
+</html>
