@@ -1,0 +1,38 @@
+{
+  "sections": [],
+  "images": [
+    {
+      "folder": "other",
+      "filename": "f-avatar.jpg",
+      "url": "https://avatars.steamstatic.com/b8a6f62b8b7bd48279016ddb5616f9a555b0cf5d_full.jpg",
+      "alt": "",
+      "title": "",
+      "ariaLabel": "",
+      "sectionIdx": -1,
+      "role": null,
+      "usage": null
+    },
+    {
+      "folder": "other",
+      "filename": "f-avatar-1.jpg",
+      "url": "https://avatars.steamstatic.com/faf190027a035b4d01f05465d5152a86d690bf8b_full.jpg",
+      "alt": "",
+      "title": "",
+      "ariaLabel": "",
+      "sectionIdx": -1,
+      "role": null,
+      "usage": null
+    },
+    {
+      "folder": "other",
+      "filename": "f-avatar-2.jpg",
+      "url": "https://avatars.steamstatic.com/19d2a66e8af03a222591bcf203949a294e02189b_full.jpg",
+      "alt": "",
+      "title": "",
+      "ariaLabel": "",
+      "sectionIdx": -1,
+      "role": null,
+      "usage": null
+    }
+  ]
+}

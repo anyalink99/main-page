@@ -1,0 +1,48 @@
+{
+  "url": "https://seum.online/",
+  "title": "SEUM | Global Activity",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "capturedAt": "2026-04-13T12:09:48.449Z",
+  "htmlLang": "en",
+  "viewportMeta": "width=device-width, initial-scale=1.0",
+  "bodyBgColor": "rgb(13, 13, 16)",
+  "fixedOrSticky": [
+    {
+      "selector": "#sidebar",
+      "position": "fixed",
+      "zIndex": "2000",
+      "rect": {
+        "top": 0,
+        "left": 0,
+        "width": 1,
+        "height": 1160
+      },
+      "tagName": "DIV",
+      "role": "floating",
+      "textPreview": "× HOME FEED GLOBAL RANKINGS LEVEL SETUPS VOCABULARY MUTATOR STATS POLLS WORLD RECORDS SEARCH PLAYER LOGIN",
+      "classes": "sidebar",
+      "id": "sidebar"
+    },
+    {
+      "selector": "div.menu-btn:nth-of-type(2)",
+      "position": "fixed",
+      "zIndex": "1001",
+      "rect": {
+        "top": 25,
+        "left": 30,
+        "width": 47,
+        "height": 48
+      },
+      "tagName": "DIV",
+      "role": "header-candidate",
+      "textPreview": "",
+      "classes": "menu-btn",
+      "id": ""
+    }
+  ],
+  "overlays": [],
+  "sections": []
+}

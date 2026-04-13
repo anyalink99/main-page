@@ -1,0 +1,5 @@
+.claude/
+projects/**/.claude/
+projects/**/node_modules/
+projects/**/temporary screenshots/
+node_modules/

@@ -1,0 +1,72 @@
+[
+  {
+    "index": 0,
+    "selector": "div.hero:nth-of-type(3)",
+    "heading": "SEUM STATS",
+    "rect": {
+      "top": 0,
+      "width": 1425,
+      "height": 540
+    }
+  },
+  {
+    "index": 1,
+    "selector": "div.container:nth-of-type(4) > div.main-content > div.left-sidebar:nth-of-type(1) > div.info-box:nth-of-type(1)",
+    "heading": "",
+    "rect": {
+      "top": 540,
+      "width": 280,
+      "height": 377
+    }
+  },
+  {
+    "index": 2,
+    "selector": "div.container:nth-of-type(4) > div.main-content > div.left-sidebar:nth-of-type(1) > div.info-box:nth-of-type(2)",
+    "heading": "",
+    "rect": {
+      "top": 937,
+      "width": 280,
+      "height": 191
+    }
+  },
+  {
+    "index": 3,
+    "selector": "div.container:nth-of-type(4) > div.main-content > div.feed-column:nth-of-type(2)",
+    "heading": "",
+    "rect": {
+      "top": 540,
+      "width": 640,
+      "height": 936
+    }
+  },
+  {
+    "index": 4,
+    "selector": "div.container:nth-of-type(4) > div.main-content > div.right-sidebar:nth-of-type(3) > a.discord-box",
+    "heading": "",
+    "rect": {
+      "top": 540,
+      "width": 300,
+      "height": 88
+    }
+  },
+  {
+    "index": 5,
+    "selector": "div.container:nth-of-type(4) > div.main-content > div.right-sidebar:nth-of-type(3) > div.info-box:nth-of-type(1)",
+    "heading": "",
+    "rect": {
+      "top": 648,
+      "width": 300,
+      "height": 441
+    }
+  },
+  {
+    "index": 6,
+    "selector": "div.container:nth-of-type(4) > div.main-content > div.right-sidebar:nth-of-type(3) > div.info-box:nth-of-type(2)",
+    "heading": "",
+    "rect": {
+      "top": 1109,
+      "width": 300,
+      "height": 500
+    }
+  }
+]

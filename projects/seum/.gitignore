@@ -1,0 +1,10 @@
+node_modules/
+temporary screenshots/
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Puppeteer cache
+.cache/

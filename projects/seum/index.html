@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEUM | Global Activity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__bg-glow" aria-hidden="true"></div>
+    <div class="loader__scanlines" aria-hidden="true"></div>
+    <div class="loader__inner">
+      <svg class="loader__svg" viewBox="0 0 420 108" xmlns="http://www.w3.org/2000/svg" aria-label="SEUM">
+        <defs>
+          <linearGradient id="loader-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="#ffae00"/>
+            <stop offset="50%"  stop-color="#ff4500"/>
+            <stop offset="100%" stop-color="#8b0000"/>
+          </linearGradient>
+        </defs>
+        <text class="loader-l" style="--delay:0.12s" x="8"   y="92" font-family="'Metal Mania',cursive" font-size="95px">S</text>
+        <text class="loader-l" style="--delay:0.46s" x="108" y="92" font-family="'Metal Mania',cursive" font-size="95px">E</text>
+        <text class="loader-l" style="--delay:0.80s" x="204" y="92" font-family="'Metal Mania',cursive" font-size="95px">U</text>
+        <text class="loader-l" style="--delay:1.14s" x="305" y="92" font-family="'Metal Mania',cursive" font-size="95px">M</text>
+      </svg>
+      <div class="loader__underline" aria-hidden="true">
+        <div class="loader__underline-fill"></div>
+      </div>
+    </div>
+    <!-- Ember sparks -->
+    <div class="loader__embers" aria-hidden="true">
+      <i class="ember" style="--x:7%;  --dur:2.0s; --delay:0.3s; --size:3px; --drift:-18px"></i>
+      <i class="ember" style="--x:15%; --dur:1.7s; --delay:0.8s; --size:2px; --drift:12px"></i>
+      <i class="ember" style="--x:23%; --dur:2.4s; --delay:0.5s; --size:3px; --drift:-10px"></i>
+      <i class="ember" style="--x:32%; --dur:1.9s; --delay:1.1s; --size:2px; --drift:20px"></i>
+      <i class="ember" style="--x:41%; --dur:2.2s; --delay:0.7s; --size:4px; --drift:-14px"></i>
+      <i class="ember" style="--x:50%; --dur:1.6s; --delay:1.4s; --size:2px; --drift:8px"></i>
+      <i class="ember" style="--x:59%; --dur:2.5s; --delay:0.4s; --size:3px; --drift:-22px"></i>
+      <i class="ember" style="--x:68%; --dur:1.8s; --delay:1.0s; --size:2px; --drift:16px"></i>
+      <i class="ember" style="--x:77%; --dur:2.1s; --delay:0.6s; --size:3px; --drift:-8px"></i>
+      <i class="ember" style="--x:86%; --dur:1.5s; --delay:1.2s; --size:2px; --drift:14px"></i>
+      <i class="ember" style="--x:93%; --dur:2.3s; --delay:0.9s; --size:3px; --drift:-20px"></i>
+    </div>
+  </div>
+
+  <!-- Sidebar nav -->
+  <div id="sidebar" class="sidebar" aria-hidden="true">
+    <div class="sidebar__header">
+      <span class="sidebar__brand">SEUM</span>
+      <div class="sidebar__close" id="sidebar-close" role="button" tabindex="0" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+      <a href="#" class="sidebar__link" style="--i:0">HOME</a>
+      <a href="#" class="sidebar__link" style="--i:1">FEED</a>
+      <a href="#" class="sidebar__link sidebar__link--rankings" style="--i:2">GLOBAL RANKINGS</a>
+      <a href="#" class="sidebar__link sidebar__link--setups"   style="--i:3">LEVEL SETUPS</a>
+      <a href="#" class="sidebar__link" style="--i:4">VOCABULARY</a>
+      <a href="#" class="sidebar__link sidebar__link--mutator"  style="--i:5">MUTATOR STATS</a>
+      <a href="#" class="sidebar__link" style="--i:6">POLLS</a>
+      <a href="#" class="sidebar__link sidebar__link--wr"       style="--i:7">WORLD RECORDS</a>
+      <a href="#" class="sidebar__link" style="--i:8">SEARCH PLAYER</a>
+    </nav>
+    <div class="sidebar__footer">
+      <a href="#" class="sidebar__login">LOGIN WITH STEAM</a>
+    </div>
+  </div>
+
+  <!-- Hamburger -->
+  <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1 class="hero__title">SEUM STATS</h1>
+    <p class="hero__subtitle">GLOBAL RANKINGS &amp; HISTORY</p>
+    <div class="hero__actions">
+      <a href="#" class="btn btn--outline">SEARCH PLAYER</a>
+      <a href="#" class="btn btn--steam">LOGIN WITH STEAM</a>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="container">
+    <div class="main-content">
+
+      <!-- Left sidebar -->
+      <aside class="left-sidebar">
+
+        <!-- Overall Stats -->
+        <div class="info-box info-box--stats reveal-item" style="--i:0">
+          <div class="info-box__steam-bg" aria-hidden="true">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 5C25.1 5 5 25.1 5 50s20.1 45 45 45 45-20.1 45-45S74.9 5 50 5zm0 10c5.8 0 11.3 1.3 16.2 3.6L38.5 46.3c-1-.2-2-.3-3-.3-10.8 0-19.5 8.7-19.5 19.5 0 1.1.1 2.2.3 3.2C10.4 63.3 8 57 8 50c0-23.2 18.8-42 42-42zm-11.5 49c0 6.4-5.1 11.5-11.5 11.5S15.5 70.4 15.5 64s5.1-11.5 11.5-11.5S38.5 57.6 38.5 64zm24.6 19.4C58 85.7 54.1 87 50 87 33.4 87 20 73.6 20 57c0-.8 0-1.5.1-2.3 2.3 3.5 6.3 5.8 10.9 5.8 7.2 0 13-5.8 13-13 0-1.8-.4-3.5-1-5.1l26.7-27.6c6.2 7 9.9 16.1 9.9 26.2 0 8.7-2.8 16.8-7.5 23.4z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h2 class="info-box__title">OVERALL STATS</h2>
+          <div class="info-box__divider"></div>
+          <div class="stats-row stats-row--live">
+            <span class="stats-row__dot"></span>
+            <span class="stats-row__value stats-row__value--green">4</span>
+            <span class="stats-row__label stats-row__label--green">IN-GAME NOW</span>
+          </div>
+          <div class="info-box__divider"></div>
+          <div class="stats-row">
+            <span class="stats-row__value">852</span>
+            <span class="stats-row__label">ALL-TIME PEAK</span>
+          </div>
+          <div class="info-box__divider"></div>
+          <div class="stats-row">
+            <span class="stats-row__value stats-row__value--cyan">16,900</span>
+            <span class="stats-row__label">TRACKED RUNS</span>
+          </div>
+          <div class="info-box__footer">
+            <a href="#" class="info-box__link">VIEW ON STEAMDB ↗</a>
+          </div>
+        </div>
+
+        <!-- Server Pulse -->
+        <div class="info-box info-box--pulse reveal-item" style="--i:1">
+          <div class="info-box__head">
+            <h2 class="info-box__title info-box__title--pulse">SERVER PULSE</h2>
+            <span class="info-box__sub">Last 30 Days</span>
+          </div>
+          <div class="info-box__divider"></div>
+          <div class="pulse-chart">
+            <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-label="Server activity over last 30 days">
+              <defs>
+                <linearGradient id="pulse-fill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#e94560" stop-opacity="0.5"/>
+                  <stop offset="100%" stop-color="#e94560" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <!-- Fill area -->
+              <path d="M0,115 L0,108 L9,106 L18,105 L27,107 L36,106 L45,108 L54,107 L63,105 L72,104 L81,28 L90,72 L99,108 L108,90 L117,85 L126,100 L135,108 L144,103 L153,105 L162,110 L171,108 L180,106 L189,109 L198,108 L207,110 L216,109 L225,111 L234,110 L243,112 L252,113 L261,114 L270,115 L280,115 L280,115 Z" fill="url(#pulse-fill)"/>
+              <!-- Line -->
+              <path d="M0,108 L9,106 L18,105 L27,107 L36,106 L45,108 L54,107 L63,105 L72,104 L81,28 L90,72 L99,108 L108,90 L117,85 L126,100 L135,108 L144,103 L153,105 L162,110 L171,108 L180,106 L189,109 L198,108 L207,110 L216,109 L225,111 L234,110 L243,112 L252,113 L261,114 L270,115" fill="none" stroke="#e94560" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- Feed column -->
+      <main class="feed-column">
+        <div class="feed-header reveal-item" style="--i:0">
+          <span class="feed-header__dot" aria-hidden="true">•</span>
+          GLOBAL ACTIVITY
+        </div>
+        <div class="feed-filters reveal-item" style="--i:1" role="tablist">
+          <button class="feed-filter feed-filter--active" role="tab" aria-selected="true">ALL</button>
+          <button class="feed-filter" role="tab" aria-selected="false">WORLD RECORDS</button>
+          <button class="feed-filter" role="tab" aria-selected="false">TOP 10 (24h)</button>
+          <button class="feed-filter" role="tab" aria-selected="false">COMMENTS</button>
+        </div>
+        <div class="feed-list reveal-item" id="feed-container" style="--i:2">
+
+          <div class="feed-item">
+            <div class="feed-item__left">
+              <img src="assets/images/f-avatar.jpg" alt="DarkScylla" class="feed-item__avatar">
+              <span class="feed-badge feed-badge--ss">SS</span>
+            </div>
+            <div class="feed-item__info">
+              <span class="feed-item__player">DarkScylla</span>
+              <span class="feed-item__level">DZ - U-TURN</span>
+            </div>
+            <div class="feed-item__right">
+              <div class="feed-item__time-row">
+                <span class="feed-item__time">3.066</span>
+                <span class="feed-item__delta feed-item__delta--neg">-134ms</span>
+              </div>
+              <div class="feed-item__badges">
+                <span class="feed-chip feed-chip--rank">RANK #20</span>
+                <span class="feed-chip feed-chip--pts">+1121 pts</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="feed-item">
+            <div class="feed-item__left">
+              <img src="assets/images/f-avatar-1.jpg" alt="PrOXeLa" class="feed-item__avatar">
+              <span class="feed-badge feed-badge--s">5+</span>
+            </div>
+            <div class="feed-item__info">
+              <span class="feed-item__player">PrOXeLa</span>
+              <span class="feed-item__level">59 - CHANGED MY MIND</span>
+            </div>
+            <div class="feed-item__right">
+              <div class="feed-item__time-row">
+                <span class="feed-item__time">14.773</span>
+                <span class="feed-item__delta feed-item__delta--neg">-47ms</span>
+              </div>
+              <div class="feed-item__badges">
+                <span class="feed-chip feed-chip--rank">RANK #16</span>
+                <span class="feed-chip feed-chip--pts">+931 pts</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="feed-item">
+            <div class="feed-item__left">
+              <img src="assets/images/f-avatar-1.jpg" alt="PrOXeLa" class="feed-item__avatar">
+              <span class="feed-badge feed-badge--sp">S+</span>
+            </div>
+            <div class="feed-item__info">
+              <span class="feed-item__player">PrOXeLa</span>
+              <span class="feed-item__level">55 - DEVILS PASS</span>
+            </div>
+            <div class="feed-item__right">
+              <div class="feed-item__time-row">
+                <span class="feed-item__time">10.449</span>
+                <span class="feed-item__delta feed-item__delta--neg">-6ms</span>
+              </div>
+              <div class="feed-item__badges">
+                <span class="feed-chip feed-chip--rank">RANK #10</span>
+                <span class="feed-chip feed-chip--pts">+260 pts</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="feed-item">
+            <div class="feed-item__left">
+              <img src="assets/images/f-avatar-1.jpg" alt="PrOXeLa" class="feed-item__avatar">
+              <span class="feed-badge feed-badge--ss">SS</span>
+            </div>
+            <div class="feed-item__info">
+              <span class="feed-item__player">PrOXeLa</span>
+              <span class="feed-item__level">54 - BUNGEE JUMP</span>
+            </div>
+            <div class="feed-item__right">
+              <div class="feed-item__time-row">
+                <span class="feed-item__time">4.714</span>
+                <span class="feed-item__delta feed-item__delta--neg">-16ms</span>
+              </div>
+              <div class="feed-item__badges">
+                <span class="feed-chip feed-chip--rank">RANK #16</span>
+                <span class="feed-chip feed-chip--pts">+304 pts</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="feed-item">
+            <div class="feed-item__left">
+              <img src="assets/images/f-avatar-1.jpg" alt="PrOXeLa" class="feed-item__avatar">
+              <span class="feed-badge feed-badge--ss">SS</span>
+            </div>
+            <div class="feed-item__info">
+              <span class="feed-item__player">PrOXeLa</span>
+              <span class="feed-item__level">51 - UNDER CONSTRUCTION</span>
+            </div>
+            <div class="feed-item__right">
+              <div class="feed-item__time-row">
+                <span class="feed-item__time">4.573</span>
+                <span class="feed-item__delta feed-item__delta--neg">-30ms</span>
+              </div>
+              <div class="feed-item__badges">
+                <span class="feed-chip feed-chip--rank">RANK #10</span>
+                <span class="feed-chip feed-chip--pts">+1430 pts</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="feed-item">
+            <div class="feed-item__left">
+              <img src="assets/images/f-avatar-1.jpg" alt="PrOXeLa" class="feed-item__avatar">
+              <span class="feed-badge feed-badge--ss">SS</span>
+            </div>
+            <div class="feed-item__info">
+              <span class="feed-item__player">PrOXeLa</span>
+              <span class="feed-item__level">51 - UNDER CONSTRUCTION</span>
+            </div>
+            <div class="feed-item__right">
+              <div class="feed-item__time-row">
+                <span class="feed-item__time">4.603</span>
+                <span class="feed-item__delta feed-item__delta--neg">-19ms</span>
+              </div>
+              <div class="feed-item__badges">
+                <span class="feed-chip feed-chip--rank">RANK #17</span>
+                <span class="feed-chip feed-chip--pts">+288 pts</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="feed-item">
+            <div class="feed-item__left">
+              <img src="assets/images/f-avatar-1.jpg" alt="PrOXeLa" class="feed-item__avatar">
+              <span class="feed-badge feed-badge--sp">5+</span>
+            </div>
+            <div class="feed-item__info">
+              <span class="feed-item__player">PrOXeLa</span>
+              <span class="feed-item__level">D16 - ARCHERS ON TOWER</span>
+            </div>
+            <div class="feed-item__right">
+              <div class="feed-item__time-row">
+                <span class="feed-item__time">9.909</span>
+                <span class="feed-item__delta feed-item__delta--neg">-33ms</span>
+              </div>
+              <div class="feed-item__badges">
+                <span class="feed-chip feed-chip--rank">RANK #13</span>
+                <span class="feed-chip feed-chip--pts">+1041 pts</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="feed-item feed-item--more">
+            <span class="feed-more">• • •</span>
+          </div>
+
+        </div>
+      </main>
+
+      <!-- Right sidebar -->
+      <aside class="right-sidebar">
+
+        <!-- Discord CTA -->
+        <a href="#" class="discord-box reveal-item" style="--i:0">
+          <span class="discord-box__title">JOIN RSC DISCORD</span>
+          <span class="discord-box__sub">Active Community Server with SEUM Bot</span>
+        </a>
+
+        <!-- Weekly Hall of Fame -->
+        <div class="info-box info-box--hof reveal-item" style="--i:1">
+          <h2 class="info-box__title info-box__title--hof">WEEKLY HALL OF FAME</h2>
+          <div class="info-box__divider"></div>
+
+          <div class="hof-row">
+            <div class="hof-row__icon hof-row__icon--mvp" aria-label="MVP">
+              <!-- Trophy/skull icon -->
+              <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="14" r="9" fill="none" stroke="#aaa" stroke-width="2"/>
+                <ellipse cx="20" cy="28" rx="7" ry="5" fill="none" stroke="#aaa" stroke-width="2"/>
+                <rect x="14" y="29" width="12" height="4" rx="2" fill="#aaa" opacity="0.7"/>
+                <circle cx="16" cy="13" r="1.5" fill="#aaa"/>
+                <circle cx="24" cy="13" r="1.5" fill="#aaa"/>
+                <path d="M17 18 Q20 21 23 18" fill="none" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="hof-row__body">
+              <span class="hof-row__cat">MVP (POINTS)</span>
+              <span class="hof-row__player">PrOXeLa</span>
+              <span class="hof-row__stat">+37,294 pts</span>
+            </div>
+          </div>
+
+          <div class="hof-row">
+            <div class="hof-row__icon hof-row__icon--wr" aria-label="WR Breaker">
+              <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M10 8 H30 L28 22 Q20 30 20 30 Q20 30 12 22 Z" fill="none" stroke="#f0b429" stroke-width="2"/>
+                <path d="M8 8 H12 M28 8 H32" stroke="#f0b429" stroke-width="3" stroke-linecap="round"/>
+                <rect x="16" y="30" width="8" height="3" rx="1" fill="#f0b429" opacity="0.8"/>
+                <rect x="13" y="33" width="14" height="3" rx="1" fill="#f0b429" opacity="0.7"/>
+                <path d="M17 16 L19 20 L24 13" fill="none" stroke="#f0b429" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="hof-row__body">
+              <span class="hof-row__cat">WR BREAKER</span>
+              <span class="hof-row__player">FreezBlox</span>
+              <span class="hof-row__stat">1 WRs</span>
+            </div>
+          </div>
+
+          <div class="hof-row">
+            <div class="hof-row__icon hof-row__icon--fire" aria-label="Most Active">
+              <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M20 34 C10 34 8 26 12 20 C14 17 14 14 14 14 C16 18 17 19 18 18 C16 14 18 8 22 6 C21 10 22 13 25 14 C27 12 27 10 26 8 C30 12 32 18 30 24 C32 22 32 19 31 17 C34 21 34 28 28 32 C29 28 27 26 26 27 C27 30 25 34 20 34 Z" fill="#ff6b2b" stroke="none"/>
+                <path d="M20 32 C15 32 14 27 16 23 C17.5 25 18 27 20 26 C19 22 20 18 22 16 C22 20 24 22 25 21 C25 25 23 32 20 32 Z" fill="#ffae00" opacity="0.8"/>
+              </svg>
+            </div>
+            <div class="hof-row__body">
+              <span class="hof-row__cat">MOST ACTIVE</span>
+              <span class="hof-row__player">PrOXeLa</span>
+              <span class="hof-row__stat">78 runs</span>
+            </div>
+          </div>
+
+          <div class="hof-row">
+            <div class="hof-row__icon hof-row__icon--star" aria-label="Most Top 10s">
+              <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <polygon points="20,5 23.5,14 33,14 25.5,19.5 28,29 20,23.5 12,29 14.5,19.5 7,14 16.5,14" fill="#aaa" stroke="none"/>
+              </svg>
+            </div>
+            <div class="hof-row__body">
+              <span class="hof-row__cat">MOST TOP 10S</span>
+              <span class="hof-row__player">PrOXeLa</span>
+              <span class="hof-row__stat">24 times</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Top 10 Leaderboard -->
+        <div class="info-box info-box--lb reveal-item" style="--i:2">
+          <h2 class="info-box__title info-box__title--lb">TOP 10 LEADERBOARD</h2>
+          <div class="info-box__divider"></div>
+          <ol class="lb-list">
+            <li class="lb-row"><span class="lb-row__rank">#1</span><span class="lb-row__player">faustian bargain</span><span class="lb-row__score">1,483,334</span></li>
+            <li class="lb-row"><span class="lb-row__rank">#2</span><span class="lb-row__player">NotleRone</span><span class="lb-row__score">1,290,959</span></li>
+            <li class="lb-row"><span class="lb-row__rank">#3</span><span class="lb-row__player">young talent</span><span class="lb-row__score">1,175,088</span></li>
+            <li class="lb-row"><span class="lb-row__rank">#4</span><span class="lb-row__player">b_o</span><span class="lb-row__score">800,529</span></li>
+            <li class="lb-row"><span class="lb-row__rank">#5</span><span class="lb-row__player">Jane juliet guy</span><span class="lb-row__score">745,379</span></li>
+            <li class="lb-row"><span class="lb-row__rank">#6</span><span class="lb-row__player">TallestLemon</span><span class="lb-row__score">711,116</span></li>
+            <li class="lb-row"><span class="lb-row__rank">#7</span><span class="lb-row__player">ssolle</span><span class="lb-row__score">668,281</span></li>
+            <li class="lb-row"><span class="lb-row__rank">#8</span><span class="lb-row__player">Egg</span><span class="lb-row__score">625,843</span></li>
+            <li class="lb-row"><span class="lb-row__rank">#9</span><span class="lb-row__player">BoDM</span><span class="lb-row__score">625,710</span></li>
+            <li class="lb-row"><span class="lb-row__rank">#10</span><span class="lb-row__player">Botesy</span><span class="lb-row__score">600,383</span></li>
+          </ol>
+          <div class="info-box__footer">
+            <a href="#" class="info-box__link">VIEW FULL RANKINGS →</a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
