@@ -1,6 +1,11 @@
 // Poker Timer — Simplified Interactive Demo
 
 (function() {
+  if (new URLSearchParams(location.search).get('from') === 'autocubes') {
+    const back = document.getElementById('backLink');
+    if (back) back.href = 'https://app.autocubes.site/#work';
+  }
+
   const structure = [
     { type:'level', sb:100, bb:100, dur:1200 },
     { type:'level', sb:100, bb:200, dur:1200 },
